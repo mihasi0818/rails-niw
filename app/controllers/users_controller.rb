@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params.require(:user).permit(:title,:start,:check,:end,:updated_at,:content))
     if @user.save
-      flash[:notice] = "登録しました"
+      flash[:notice] = "登録完了"
       redirect_to :users
     else
       render "new"

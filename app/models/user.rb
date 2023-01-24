@@ -6,7 +6,7 @@ class User < ApplicationRecord
     length: {minimum:1, maximum:500}
 
     def start_end_check
-        errors.add(:end, "は開始日より前の日付は登録できません。") unless
+        errors.add(:end, "は開始日より前の日付は登録できません！！") unless
         self.start< self.end
     end
 end

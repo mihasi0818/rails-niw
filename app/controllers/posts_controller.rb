@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params.require(:post).permit(:content, :user_id))
      if @post.save
-       flash[:notice] = "新規投稿をしました"
+       flash[:notice] = "新規投稿をしました！"
        redirect_to :users
      else
        @user = User.find_by(params[:post][:user_id])
