@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(params.require(:post).permit(:content))
-      flash[:notice] = "投稿を更新しました"
+      flash[:notice] = "投稿を更新しました！"
       redirect_to :users
     else
       render "edit"
